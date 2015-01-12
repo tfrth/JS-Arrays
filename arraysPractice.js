@@ -60,27 +60,17 @@ var reversedLooper = function() {
 var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
-var evenFinder = function() {
-  for (var i = 0; i < nums.length; i++) {
-    if (nums[i] % 2 === 0) {
-        delete.nums(nums[i]);
-    
-        return nums;
+var evenFinder = function(numArray) {
+  var newArray = [];
+  for (var i = 0; i < numArray.length; i++) {
+    if (numArray[i] % 2 === 0) {
+        newArray.push(numArray[i]);
     } 
   }
+    return newArray;
 };
 
-// var odds = [];
 
-// var evenFinder = function() {
-// for (var i = 0; i < nums.length; i++) {
-//     if (nums[i] % 2 === 0) {
-//         nums.push(nums[i]);
-//     } else {
-//         odds.push(nums[i]);
-//     }
-// }
-// }
 
 //Next problem
 
@@ -151,19 +141,24 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   myGroceryList then return the new, updated grocery list.
 */
 
-var removeItem = function ()  {
+var removeItem = function (myGroceryList, itemToRemove)  {
   for (var i = 0; i < myGroceryList.length; i++)  {
-    if ('chips' === myGroceryList[i]) {
-      myGroceryList
+    if (myGroceryList[i] === itemToRemove) {
+      myGroceryList.splice(i, 1);
     }
   }
 }
 //removeItem('chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem('Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
+var addItem = function (myGroceryList, itemToAdd) {
+  myGroceryList.push(itemToAdd);
+  return myGroceryList;
+ }
+}
 
 
-//Next Problem
+
 
 
 
@@ -195,6 +190,7 @@ var addTen = function() {
   };
     return numbers;
 }
+
 
 
 
